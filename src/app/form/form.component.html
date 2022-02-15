@@ -1,0 +1,13 @@
+<div class="form">
+  <input
+    type="text"
+    placeholder="Enter a Todo..."
+    id="item-input"
+    #input
+    class="toDo-input"
+    maxlength="30"
+  />
+  <button type="button" class="submit-toDo" (click)="addNewToDo(input)">
+    Add Todo
+  </button>
+</div>

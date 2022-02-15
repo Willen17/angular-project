@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Todo } from 'src/app/models/Todo';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
@@ -9,41 +9,55 @@ import { faCross } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './todos.component.html',
   styleUrls: ['./todos.component.css'],
 })
-export class TodosComponent implements OnInit {
+export class TodosComponent implements OnChanges {
   faTrash = faTrash;
   faCheck = faCheck;
   faCross = faCross;
-  constructor() {}
 
-  toDos?: Todo[];
+  @Input() toDos?: Todo[];
 
-  inputToDo?: string = '';
-
-  ngOnInit(): void {
-    this.toDos = [];
+  completeToDo(todo: Todo) {
+    todo.completed = !todo.completed;
   }
 
-  toggleDone(id: number) {
-    this.toDos?.map((value, index) => {
-      if (index == id) value.completed = !value.completed;
-
-      return value;
-    });
+  deleteToDo(todo: Todo) {
+    let index: number = this.toDos!.indexOf(todo);
+    this.toDos?.splice(index, 1);
   }
 
-  deleteToDo(id: number) {
-    // This function checks if Index isnt equal to the ID. If so, we are not going to return it.
-    this.toDos = this.toDos?.filter((value, index) => index !== id);
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(this.toDos);
   }
 
-  addToDo() {
-    //Here we push the input value to the toDo array.
-    this.toDos?.push({
-      content: this.inputToDo,
-      completed: false,
-    });
+  // toDos?: Todo[];
 
-    // This sets the input field to blank afterwards.
-    this.inputToDo = '';
-  }
+  // inputToDo?: string = '';
+
+  // ngOnInit(): void {
+  //   this.toDos = [];
+  // }
+
+  // toggleDone(id: number) {
+  //   this.toDos?.map((value, index) => {
+  //     if (index == id) value.completed = !value.completed;
+
+  //     return value;
+  //   });
+  // }
+
+  // deleteToDo(id: number) {
+  //   // This function checks if Index isnt equal to the ID. If so, we are not going to return it.
+  //   this.toDos = this.toDos?.filter((value, index) => index !== id);
+  // }
+
+  // addToDo() {
+  //   //Here we push the input value to the toDo array.
+  //   this.toDos?.push({
+  //     content: this.inputToDo,
+  //     completed: false,
+  //   });
+
+  //   // This sets the input field to blank afterwards.
+  //   this.inputToDo = '';
+  // }
 }

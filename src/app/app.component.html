@@ -2,5 +2,6 @@
   <header>
     <h1>My Todo-list</h1>
   </header>
-  <app-todos></app-todos>
+  <app-form (newToDoEvent)="addToDo($event)"></app-form>
+  <app-todos [toDos]="toDos"></app-todos>
 </div>
