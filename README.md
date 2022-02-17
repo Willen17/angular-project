@@ -15,7 +15,7 @@ När CLI är färdiginstallerad så kan du använda dig av dess funktioner och s
 **ng serve --open**
 
 Då bör det ha öppnats en lokal server i webbläsaren på
-http://localhost:4200/
+http://localhost:4200/ Om det inte fungerar, testa att köra npm update. Och sedan gör om processen.
 
 ---
 
