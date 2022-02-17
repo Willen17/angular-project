@@ -28,36 +28,4 @@ export class TodosComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     console.log(this.toDos);
   }
-
-  // toDos?: Todo[];
-
-  // inputToDo?: string = '';
-
-  // ngOnInit(): void {
-  //   this.toDos = [];
-  // }
-
-  // toggleDone(id: number) {
-  //   this.toDos?.map((value, index) => {
-  //     if (index == id) value.completed = !value.completed;
-
-  //     return value;
-  //   });
-  // }
-
-  // deleteToDo(id: number) {
-  //   // This function checks if Index isnt equal to the ID. If so, we are not going to return it.
-  //   this.toDos = this.toDos?.filter((value, index) => index !== id);
-  // }
-
-  // addToDo() {
-  //   //Here we push the input value to the toDo array.
-  //   this.toDos?.push({
-  //     content: this.inputToDo,
-  //     completed: false,
-  //   });
-
-  //   // This sets the input field to blank afterwards.
-  //   this.inputToDo = '';
-  // }
 }

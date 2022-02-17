@@ -1,5 +1,5 @@
 <div class="toDos" *ngFor="let todo of toDos">
-  <div class="toDo {{ todo.completed ? 'done' : '' }}">
+  <div class="toDo" [ngClass]="todo.completed ? 'done' : ''">
     <div class="toDo-info">
       <div class="id">{{ toDos?.indexOf(todo) }}</div>
       <div class="todo-content">{{ todo.content }}</div>
