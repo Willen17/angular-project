@@ -8,14 +8,18 @@ Då Angular använder sig av sin egna CLI behöver du installera denna. Det gör
 
 **npm install -g @angular/cli**
 
-När CLI är färdiginstallerad så kan du använda dig av dess funktioner och sätta upp en lokal server. Säkerställ att du står i mappen angular-project-master och skriv följande i terminalen:
+Sedan skriver du in följande i terminalen:
+
+**npm update**
+
+När CLI är färdiginstallerad och npm uppdaterad så kan du använda dig av dess funktioner och sätta upp en lokal server. Säkerställ att du står i mappen angular-project-master och skriv följande i terminalen:
 
 **cd .**
 
 **ng serve --open**
 
 Då bör det ha öppnats en lokal server i webbläsaren på
-http://localhost:4200/ Om det inte fungerar, testa att köra npm update. Och sedan gör om processen.
+http://localhost:4200/
 
 ---
 
